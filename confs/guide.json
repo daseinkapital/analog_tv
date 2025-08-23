@@ -1,0 +1,16 @@
+{
+    "station_conf" : {
+        "fullscreen": true,
+        "network_name" : "Guide",
+        "network_type" : "guide",
+        "channel_number": 1,
+        "runtime_dir" : "runtime/guide",
+        "messages" : ["FieldStation42\nCable Entertainment", "Cheers!\nFrom us to you!", "FieldStation42 Guide\nOn cable mode."],
+        "images": ["runtime/guide/image0.jpg", "runtime/guide/image1.jpg", "runtime/guide/image2.jpg"],
+        "play_sound": true,
+        "sound_to_play": "runtime/guide/background_audio.mp3",
+        "width": 720,
+        "height": 480,
+        "normalize_title": true
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "bump": [
+        "bumps/cartoons"
+    ],
+    "daytime": {
+        "tv": [
+            "Adventure Time",
+            "Regular Show",
+            "Danny Phantom",
+            "Gravity Falls",
+            "Hey Arnold",
+            "Infinity Train",
+            "The Legend of Korra",
+            "The Owl House",
+            "Recess",
+            "Zatch Bell"
+        ],
+        "movies": [
+
+        ]
+    },
+    "night": {
+        "tv": [
+            "Batman Beyond",
+            "Batman the Animated Series",
+            "Beware the Batman",
+            "Courage the Cowardly Dog",
+            "Invader Zim",
+            "Justice League",
+            "Justice League Unlimited",
+            "Young Justice"
+        ],
+        "movies": [
+
+        ]
+    },
+    "prime": {
+        "tv": [
+            "Cowboy Bebop",
+            "Rick and Morty",
+            "Samurai Champloo",
+            "Space Ghost Coast to Coast"
+        ],
+        "movies": []
+    },
+    "October": {
+        "tv": [
+            "Over the Garden Wall"
+        ],
+        "movies": []
+    }
+}
