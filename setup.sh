@@ -3,16 +3,17 @@ SYSTEM = 'pi'
 if [[ SYSTEM == 'pi' ]]; then
     echo "Intalling MPV"
     sudo apt-get install mpv
-    echo "Installing python3"
-    sudo apt-get install python3
-    echo "Installing python3-pip"
-    sudo apt-get install python3-pip
-    echo "Installing python3-venv"
-    sudo apt-get install python3-venv
+    if type "python3" > /dev/null; then
+        echo "Found python3 - using that"
+    else
+        echo "Installing python3"
+        sudo apt-get install python3
+    fi
 elif [[ SYSTEM == 'mac' ]]; then
-    brew install mpv python3 python3-pip python-venv
+    brew install mpv python3
+fi
 
-if [ ! -d "./FieldStation42" ]; then
+if [ ! -d "./FieldStation42/fs42" ]; then
     echo "Cloning FieldStation42"
     git clone https://github.com/shane-mason/FieldStation42.git
     cd FieldStation42
@@ -21,12 +22,17 @@ else
 fi
 
 if [ ! -d "./FieldStation42/catalog" ]; then
+    cd FieldStation42
     echo "Initiating FieldStation42 setup script."
-    chmod +x ./FieldStation42/install.sh
-    ./FieldStation42/install.sh
-    echo "Starting virtual environment"
-    source ./FieldStation42/env/bin/activate
+    chmod +x ./install.sh
+    bash ./install.sh
     echo "Moving channel configurations into confs"
     cp -a ./confs/. ./confs/
 else
     echo "Install has already been run."
+    cd FieldStation42
+fi
+
+echo "Starting virtual environment"
+
+source env/Scripts/activate

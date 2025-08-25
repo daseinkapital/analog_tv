@@ -6,7 +6,7 @@
     "schedule_increment": 30,
     "break_strategy": "standard",
     "content_dir": "catalog/cartoons",
-    "commercial_dir": "commercial",
+    "commercial_dir": "commercials",
     "bump_dir": "bump",
     "sign_off_video": "runtime/signoff.mp4",
     "off_air_video": "runtime/off_air_pattern.mp4",
@@ -37,7 +37,6 @@
         "21": {"tags": "tv"},
         "22": {"tags": "tv"},
         "23": {"tags": "tv"}
-
     },
     "tuesday": {
         "0": {"tags": "tv"},

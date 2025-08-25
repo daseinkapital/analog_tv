@@ -1,8 +1,11 @@
 {
     "bump": [
-        "bumps/gsn"
+        "abc"
     ],
-    "shows": {
-        "tv": ["Jeopardy"]
-    }
+    "commercials": [
+        "general"
+    ],
+    "tv": [
+        "Jeopardy"
+    ]
 }

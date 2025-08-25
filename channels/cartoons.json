@@ -1,9 +1,13 @@
 {
     "bump": [
-        "bumps/cartoons"
+        "cartoon_network"
     ],
-    "daytime": {
-        "tv": [
+    "commercials": [
+        "kids",
+        "general"
+    ],
+    "tv": {
+        "daytime": [
             "Adventure Time",
             "Regular Show",
             "Danny Phantom",
@@ -15,12 +19,7 @@
             "Recess",
             "Zatch Bell"
         ],
-        "movies": [
-
-        ]
-    },
-    "night": {
-        "tv": [
+        "night": [
             "Batman Beyond",
             "Batman the Animated Series",
             "Beware the Batman",
@@ -30,23 +29,14 @@
             "Justice League Unlimited",
             "Young Justice"
         ],
-        "movies": [
-
-        ]
-    },
-    "prime": {
-        "tv": [
+        "prime": [
             "Cowboy Bebop",
             "Rick and Morty",
             "Samurai Champloo",
             "Space Ghost Coast to Coast"
         ],
-        "movies": []
-    },
-    "October": {
-        "tv": [
+        "October": [
             "Over the Garden Wall"
-        ],
-        "movies": []
+        ]
     }
 }
