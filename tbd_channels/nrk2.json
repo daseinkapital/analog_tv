@@ -1,0 +1,10 @@
+{"station_conf" : {
+    "network_name" : "NRK2",
+    "network_type" : "streaming",
+    "channel_number": 12,
+    "runtime_dir" : "runtime/steamy",
+    "network_long_name": "NRK2",
+    "streams": [
+        {"url": "https://nrk-live-no.akamaized.net/nrk2/muxed.m3u8?adap=small&aco=aac", "duration": 300000000, "title": "NRK2"}
+    ]
+}}

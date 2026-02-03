@@ -2,15 +2,57 @@ import os
 import csv
 import json
 import re
+import logging
+import sys
+import argparse
 
-media_dir = '/media/andrew/Russell/Media/'
-mnt_dir_tv = media_dir + 'TV'
-mnt_dir_movies = media_dir + 'Movies'
+media_dir = '/home/andrew/Shared/'
+mnt_dir_tv = media_dir + 'tv'
+mnt_dir_movies = media_dir + 'movies'
 mnt_dir_commercials = media_dir + 'commercials'
 mnt_dir_bumps = media_dir + 'bumps'
 holiday_tv_file = './plex_holiday_shows.csv'
 holiday_movie_file = './plex_holiday_movies.csv'
 fieldstore_catalog_path = './FieldStation42/catalog'
+fieldstore_confs_path = './FieldStation42/confs'
+
+other_paths = {
+    'jazzercise': media_dir + 'jazzercise',
+    'mtv': media_dir + 'music_videos',
+    'slow_tv': media_dir + 'slow_tv',
+    'home': media_dir + 'personal/Video/Hi-8 clips'
+}
+
+supported_formats = ["mp4", "mpg", "mpeg", "avi", "mov", "mkv", "ts", "m4v", "webm", "wmv"]
+
+def build_parser():
+    parser = argparse.ArgumentParser(
+        description="Catalog setup settings"
+    )
+
+    parser.add_argument(
+        "-c",
+        "--channel",
+        nargs="*",
+        help="Specific channel to rerun",
+    )
+
+    parser.add_argument(
+        "-r",
+        "--remove",
+        action="store_true",
+        help="Remove broken symlinks",
+    )
+
+    parser.add_argument(
+        "-u",
+        "--update-confs",
+        help="Replace current conf",
+    )
+
+    return parser
+
+
 
 def grab_holiday_specials(media_type='tv'):
     if media_type == 'tv':
@@ -24,14 +66,26 @@ def grab_holiday_specials(media_type='tv'):
     return show_map
 
 def make_dir_if_not_exists(directory):
-    if not os.path.exists(directory):
-        os.mkdir(directory)
+    build_dir = ''
+    for partial_dir in directory.split('/'):
+        build_dir += partial_dir + '/'
+        if not os.path.exists(build_dir):
+            os.mkdir(build_dir)
 
 def make_symlink_if_not_exists(src, trg):
     if not os.path.exists(trg):
         os.symlink(src, trg)
 
 holiday_tv_shows = grab_holiday_specials()
+
+def establish_ppv_simlink(channel_path):
+    for movie in os.listdir(mnt_dir_movies):
+        for s in os.listdir(f"{mnt_dir_movies}/{movie}"): # open the folder
+            for filetype in supported_formats:
+                if s.endswith('.' + filetype):
+                    make_symlink_if_not_exists(f"{mnt_dir_movies}/{movie}/{s}", f"{channel_path}/{s}")
+
+
 
 def parse_episode(episode_name):
     exp = r'S(\d+)\s?E(\d+)'
@@ -51,6 +105,8 @@ def recurse_tagging(contents, curr_dir, first_level=False):
             if tag == 'commercials' or tag == 'bump': # if it's commercial or bumps, hanlde appropriately
                 mnt_dir = mnt_dir_bumps if tag == "bump" else mnt_dir_commercials
                 for folder in val:
+                    if '/' in folder:
+                        make_dir_if_not_exists(f"{next_dir}/{'/'.join(folder.split('/')[:-1])}") # allows for greater subfolder specifications
                     make_symlink_if_not_exists(f"{mnt_dir}/{folder}", f"{next_dir}/{folder}")
                 continue
         if type(val) == list: # if it's a list of things, locate them and make the symlink
@@ -89,17 +145,94 @@ def symlink_files(media_name, channel_name, curr_dir, media_type="tv"):
                                 make_symlink_if_not_exists(f"{mnt_dir_tv}/{show}/{s}/{e}", f"{curr_dir}/{media_name}/{e}")
                                 pass
                 break
+    elif media_type == 'movie':
+        print("Current dir", curr_dir)
+        for movie in os.listdir(mnt_dir_movies): # loop through all our movies
+            if movie.capitalize().startswith(media_name.capitalize()): # see if we find the folder
+                found = True # mark folder as found
+                print("Linking ", movie)
+                make_dir_if_not_exists(f"{curr_dir}/{media_name}")
+                for s in os.listdir(f"{mnt_dir_movies}/{movie}"): # open the folder
+                    for filetype in supported_formats:
+                        if s.endswith('.' + filetype):
+                            make_symlink_if_not_exists(f"{mnt_dir_movies}/{movie}/{s}", f"{curr_dir}/{media_name}/{s}")
+                            break
     if not found:
         print("Could not find directory for media ", media_name)
 
-for channel in os.listdir('channels'):
-    channel_name, _ = os.path.splitext(channel)
+def check_items_in_path_folder_or_file(path):
+    for item in os.listdir(path):
+        if os.path.isdir(path + '/' + item):
+            check_items_in_path_folder_or_file(path + '/' + item)
+        if os.path.islink(path + '/' + item) and not os.path.exists(path + '/' + item):
+            os.unlink(path + '/' + item)
+
+def recurse_adding_media(channel_path, src):
+    for item in os.listdir(src):
+        print(item)
+        if os.path.isdir(f"{src}/{item}"):
+            recurse_adding_media(channel_path, f"{src}/{item}")
+        elif os.path.isfile(f"{src}/{item}"):
+            filetype = item.split('.')[1]
+            if filetype in supported_formats:
+                print("in")
+                make_symlink_if_not_exists(f"{src}/{item}", f"{channel_path}/{item}")
+
+def add_misc_videos(channel_name, channel_path):
+    make_dir_if_not_exists(f"{channel_path}/commercials")
+    make_dir_if_not_exists(f"{channel_path}/bumps")
+    if channel_name == 'mtv':
+        recurse_adding_media(f"{channel_path}/commercials", f"{mnt_dir_commercials}/channels/mtv")
+        recurse_adding_media(f"{channel_path}/bumps", f"{mnt_dir_bumps}/mtv")
+    make_dir_if_not_exists(f"{channel_path}/{channel_name}")
+    recurse_adding_media(f"{channel_path}/{channel_name}", other_paths[channel_name])
+
+
+def process_channel(channel_name):
     channel_path = f"{fieldstore_catalog_path}/{channel_name}"
     if not os.path.exists(channel_path):
         os.mkdir(channel_path)
-    with open(f"channels/{channel}") as f:
+    if channel_name == "ppv":
+        establish_ppv_simlink(channel_path)
+        return
+    elif channel_name in ["mtv", "slow_tv", "jazzercise", "home"]:
+        add_misc_videos(channel_name, channel_path)
+        return
+    with open(f"channels/{channel_name}.json") as f:
         contents = json.load(f)
+        print(channel)
         recurse_tagging(contents, channel_path, first_level=True)
+
+def replace_conf(name):
+    for conf in os.listdir('./confs'):
+        if name in conf:
+            os.replace(f"./confs/{conf}", f"{fieldstore_confs_path}/{conf}")
+
+
+parser = build_parser()
+args = parser.parse_args()
+
+if args.remove:
+    #clean up all symlinks that may have broken (either deleted or filename change)
+    for channel in os.listdir(fieldstore_catalog_path):
+        print(channel)
+        check_items_in_path_folder_or_file(f"{fieldstore_catalog_path}/{channel}")
+
+if args.channel:
+    channel = args.channel[0]
+    process_channel(channel)
+    if args.update_confs:
+        replace_conf(channel)
+
+else:
+    for channel in os.listdir('channels'):
+        channel_name, _ = os.path.splitext(channel)
+        print(channel_name)
+        process_channel(channel_name)
+
+        if args.update_confs:
+            replace_conf(channel_name)
+        
         
         
         

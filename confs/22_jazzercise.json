@@ -1,0 +1,52 @@
+{"station_conf" : {
+    "network_name" : "MOVE!",
+    "channel_number": 22,
+
+    "network_type": "standard",
+    "schedule_increment": 0,
+    "break_strategy": "end",
+    "commercial_free": true,
+
+    "content_dir" : "catalog/jazzercise",
+    "commercial_dir" : "commercials",
+    "bump_dir" : "bumps",
+    "clip_shows" : ["jazzercise"],
+
+    "sign_off_video": "runtime/signoff.mp4",
+    "off_air_video": "runtime/off_air_pattern.mp4",
+    "standby_image": "runtime/standby.png",
+    "be_right_back_media" : "runtime/brb.png",
+
+    "day_templates" : {
+        "weekday": {
+            "0": {"tags" : "jazzercise"},
+            "1": {"tags" : "jazzercise"},
+            "2": {"event" : "jazzercise"},
+            "7": {"tags": "jazzercise"},
+            "8": {"tags": "jazzercise"},
+            "9": {"tags": "jazzercise"},
+            "10": {"tags" : "jazzercise"},
+            "11": {"tags" : "jazzercise"},
+            "12": {"tags" : "jazzercise"},
+            "13": {"tags" : "jazzercise"},
+            "14": {"tags" : "jazzercise"},
+            "15": {"tags" : "jazzercise"},
+            "16": {"tags" : "jazzercise"},
+            "17": {"tags" : "jazzercise"},
+            "18": {"tags" : "jazzercise"},
+            "19": {"tags" : "jazzercise"},
+            "20": {"tags" : "jazzercise"},
+            "21": {"tags" : "jazzercise"},
+            "22": {"tags" : "jazzercise"},
+            "23": {"tags" : "jazzercise"}
+        }
+    },
+
+    "monday": "weekday",
+    "tuesday": "weekday",
+    "wednesday": "weekday",
+    "thursday": "weekday",
+    "friday": "weekday",
+    "saturday": "weekday",
+    "sunday": "weekday"
+}}

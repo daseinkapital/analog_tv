@@ -1,0 +1,9 @@
+{
+  "station_conf": {
+    "network_name": "Movie Library",
+    "channel_number": 42,
+    "network_type": "web",
+    "content_dir": "catalog/ppv",
+    "web_url": "/static/ppv/ppv.html"
+  }
+}

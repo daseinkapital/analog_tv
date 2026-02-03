@@ -1,0 +1,52 @@
+{"station_conf" : {
+    "network_name" : "SakTV",
+    "channel_number": 20,
+
+    "network_type": "standard",
+    "schedule_increment": 0,
+    "break_strategy": "end",
+    "commercial_free": true, 
+
+    "content_dir" : "catalog/slow_tv",
+    "commercial_dir" : "commercials",
+    "bump_dir" : "bumps",
+    "clip_shows" : ["slow_tv"],
+
+    "sign_off_video": "runtime/signoff.mp4",
+    "off_air_video": "runtime/off_air_pattern.mp4",
+    "standby_image": "runtime/standby.png",
+    "be_right_back_media" : "runtime/brb.png",
+
+    "day_templates" : {
+        "weekday": {
+            "0": {"tags" : "slow_tv"},
+            "1": {"tags" : "slow_tv"},
+            "2": {"event" : "slow_tv"},
+            "7": {"tags": "slow_tv"},
+            "8": {"tags": "slow_tv"},
+            "9": {"tags": "slow_tv"},
+            "10": {"tags" : "slow_tv"},
+            "11": {"tags" : "slow_tv"},
+            "12": {"tags" : "slow_tv"},
+            "13": {"tags" : "slow_tv"},
+            "14": {"tags" : "slow_tv"},
+            "15": {"tags" : "slow_tv"},
+            "16": {"tags" : "slow_tv"},
+            "17": {"tags" : "slow_tv"},
+            "18": {"tags" : "slow_tv"},
+            "19": {"tags" : "slow_tv"},
+            "20": {"tags" : "slow_tv"},
+            "21": {"tags" : "slow_tv"},
+            "22": {"tags" : "slow_tv"},
+            "23": {"tags" : "slow_tv"}
+        }
+    },
+
+    "monday": "weekday",
+    "tuesday": "weekday",
+    "wednesday": "weekday",
+    "thursday": "weekday",
+    "friday": "weekday",
+    "saturday": "weekday",
+    "sunday": "weekday"
+}}

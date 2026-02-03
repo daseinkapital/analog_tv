@@ -6,11 +6,15 @@
         "channel_number": 1,
         "runtime_dir" : "runtime/guide",
         "messages" : ["FieldStation42\nCable Entertainment", "Cheers!\nFrom us to you!", "FieldStation42 Guide\nOn cable mode."],
-        "images": ["runtime/guide/image0.jpg", "runtime/guide/image1.jpg", "runtime/guide/image2.jpg"],
+        "images": ["runtime/guide/image0.jpg", "runtime/guide/image1.jpg", "runtime/guide/image2.jpg", "runtime/guide/y2k cinema.jpg", "runtime/guide/Ferris and Friends.jpg", "runtime/guide/Discs Dudes and Disasters.jpg"],
         "play_sound": true,
         "sound_to_play": "runtime/guide/background_audio.mp3",
         "width": 720,
         "height": 480,
-        "normalize_title": true
+        "normalize_title": true,
+        "network_font_family": "Helvetica",
+        "network_font_size": 24,
+        "schedule_font_family": "Helvetica",
+        "schedule_font_size": 24
     }
 }

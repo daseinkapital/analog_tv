@@ -1,0 +1,10 @@
+{"station_conf" : {
+    "network_name" : "News for You",
+    "network_type" : "streaming",
+    "channel_number": 3,
+    "runtime_dir" : "runtime/steamy",
+    "network_long_name": "My Streamy Channel",
+    "streams": [
+        {"url": "https://video.tegnaone.com/kfmb/live/v1/master/f9c1bf9ffd6ac86b6173a7c169ff6e3f4efbd693/KFMB-Production/live/index.m3u8", "duration": 300000000, "title": "Salt Lake City News"}
+    ]
+}}

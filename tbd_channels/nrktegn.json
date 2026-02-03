@@ -1,0 +1,10 @@
+{"station_conf" : {
+    "network_name" : "NRKTegnSpraak",
+    "network_type" : "streaming",
+    "channel_number": 13,
+    "runtime_dir" : "runtime/steamy",
+    "network_long_name": "NRK Tegnspraak",
+    "streams": [
+        {"url": "https://nrk-live-no.akamaized.net/nrk_tegnspraak/muxed.m3u8?adap=small&aco=aac", "duration": 300000000, "title": "NRK Tegnspraak"}
+    ]
+}}

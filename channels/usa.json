@@ -1,0 +1,19 @@
+{
+    "bump": [
+        "abc"
+    ],
+    "commercials": [
+        "general",
+        "channels/usa"
+    ],
+    "tv": {
+        "monk": ["Monk"],
+        "psych": ["Psych"],
+        "burn_notice": ["Burn Notice"],
+        "white_collar": ["White Collar"],
+        "suits": ["Suits"],
+        "royal_pains": ["Royal Pains"],
+        "covert_affairs": ["Covert Affairs"],
+        "common_law": ["Common Law"]
+    }
+}

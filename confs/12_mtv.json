@@ -1,0 +1,52 @@
+{"station_conf" : {
+    "network_name" : "MTV",
+    "channel_number": 12,
+
+    "network_type": "standard",
+    "schedule_increment": 30,
+    "break_strategy": "end",
+    "commercial_free": false, 
+
+    "content_dir" : "catalog/mtv",
+    "commercial_dir" : "commercials",
+    "bump_dir" : "bumps",
+    "clip_shows" : ["music_videos"],
+
+    "sign_off_video": "runtime/signoff.mp4",
+    "off_air_video": "runtime/off_air_pattern.mp4",
+    "standby_image": "runtime/standby.png",
+    "be_right_back_media" : "runtime/brb.png",
+
+    "day_templates" : {
+        "weekday": {
+            "0": {"tags" : "music_videos"},
+            "1": {"tags" : "music_videos"},
+            "2": {"event" : "music_videos"},
+            "7": {"tags": "music_videos"},
+            "8": {"tags": "music_videos"},
+            "9": {"tags": "music_videos"},
+            "10": {"tags" : "music_videos"},
+            "11": {"tags" : "music_videos"},
+            "12": {"tags" : "music_videos"},
+            "13": {"tags" : "music_videos"},
+            "14": {"tags" : "music_videos"},
+            "15": {"tags" : "music_videos"},
+            "16": {"tags" : "music_videos"},
+            "17": {"tags" : "music_videos"},
+            "18": {"tags" : "music_videos"},
+            "19": {"tags" : "music_videos"},
+            "20": {"tags" : "music_videos"},
+            "21": {"tags" : "music_videos"},
+            "22": {"tags" : "music_videos"},
+            "23": {"tags" : "music_videos"}
+        }
+    },
+
+    "monday": "weekday",
+    "tuesday": "weekday",
+    "wednesday": "weekday",
+    "thursday": "weekday",
+    "friday": "weekday",
+    "saturday": "weekday",
+    "sunday": "weekday"
+}}

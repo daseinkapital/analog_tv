@@ -1,0 +1,52 @@
+{"station_conf" : {
+    "network_name" : "AFV",
+    "channel_number": 21,
+
+    "network_type": "standard",
+    "schedule_increment": 0,
+    "break_strategy": "end",
+    "commercial_free": true, 
+
+    "content_dir" : "catalog/home",
+    "commercial_dir" : "commercials",
+    "bump_dir" : "bumps",
+    "clip_shows" : ["home"],
+
+    "sign_off_video": "runtime/signoff.mp4",
+    "off_air_video": "runtime/off_air_pattern.mp4",
+    "standby_image": "runtime/standby.png",
+    "be_right_back_media" : "runtime/brb.png",
+
+    "day_templates" : {
+        "weekday": {
+            "0": {"tags" : "home"},
+            "1": {"tags" : "home"},
+            "2": {"event" : "home"},
+            "7": {"tags": "home"},
+            "8": {"tags": "home"},
+            "9": {"tags": "home"},
+            "10": {"tags" : "home"},
+            "11": {"tags" : "home"},
+            "12": {"tags" : "home"},
+            "13": {"tags" : "home"},
+            "14": {"tags" : "home"},
+            "15": {"tags" : "home"},
+            "16": {"tags" : "home"},
+            "17": {"tags" : "home"},
+            "18": {"tags" : "home"},
+            "19": {"tags" : "home"},
+            "20": {"tags" : "home"},
+            "21": {"tags" : "home"},
+            "22": {"tags" : "home"},
+            "23": {"tags" : "home"}
+        }
+    },
+
+    "monday": "weekday",
+    "tuesday": "weekday",
+    "wednesday": "weekday",
+    "thursday": "weekday",
+    "friday": "weekday",
+    "saturday": "weekday",
+    "sunday": "weekday"
+}}

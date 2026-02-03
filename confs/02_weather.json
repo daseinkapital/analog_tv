@@ -1,0 +1,8 @@
+{
+    "station_conf" : {
+        "network_name" : "WeatherStar4000",
+        "network_type" : "web",
+        "channel_number": 2,
+        "web_url": "http://localhost:4000/?hazards-checkbox=true&current-weather-checkbox=true&latest-observations-checkbox=true&hourly-checkbox=false&hourly-graph-checkbox=true&travel-checkbox=false&regional-forecast-checkbox=true&local-forecast-checkbox=true&extended-forecast-checkbox=true&almanac-checkbox=true&spc-outlook-checkbox=true&radar-checkbox=true&settings-wide-checkbox=true&settings-kiosk-checkbox=false&settings-stickyKiosk-checkbox=false&settings-scanLines-checkbox=true&settings-customFeedEnable-checkbox=false&settings-speed-select=1.00&settings-scanLineMode-select=medium&settings-units-select=us&settings-mediaVolume-select=0.75&txtLocation=92104%2C+Balboa+Park%2C+San+Diego%2C+CA%2C+USA&settings-customFeed-string=&share-link-url=&latLonQuery=92104%2C+Balboa+Park%2C+San+Diego%2C+CA%2C+USA&latLon=%7B%22lat%22%3A32.7409%2C%22lon%22%3A-117.137%7DtxtLocation=East+Central%2C+Salt+Lake+City%2C+UT%2C+USA&settings-customFeed-string=&share-link-url=&latLonQuery=East+Central%2C+Salt+Lake+City%2C+UT%2C+USA&latLon=%7B%22lat%22%3A40.7596%2C%22lon%22%3A-111.8617%7D&kiosk=true&settings-mediaPlaying-boolean=true"
+    }
+}

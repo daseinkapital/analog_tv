@@ -19,7 +19,7 @@
             "Recess",
             "Zatch Bell"
         ],
-        "night": [
+        "prime": [
             "Batman Beyond",
             "Batman the Animated Series",
             "Beware the Batman",
@@ -29,7 +29,7 @@
             "Justice League Unlimited",
             "Young Justice"
         ],
-        "prime": [
+        "night": [
             "Cowboy Bebop",
             "Rick and Morty",
             "Samurai Champloo",
@@ -37,6 +37,22 @@
         ],
         "October": [
             "Over the Garden Wall"
+        ]
+    },
+    "movies": {
+        "general": [
+            "Spirited Away",
+            "9",
+            "Mononoke",
+            "Zatch Bell Movie 01",
+            "Zatch Bell Movie 02",
+            "Kikis",
+            "Howls Moving Castle",
+            "Recess School's Out"
+        ],
+        "October": [
+            "Paranorman",
+            "Frankenweenie"
         ]
     }
 }

@@ -1,7 +1,7 @@
 {
   "station_conf": {
     "network_name": "The Game Show Network",
-    "channel_number": 2,
+    "channel_number": 4,
     "network_type": "standard",
     "schedule_increment": 30,
     "break_strategy": "standard",
