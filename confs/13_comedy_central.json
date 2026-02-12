@@ -1,0 +1,118 @@
+{
+  "station_conf": {
+    "network_name": "Comedy Central",
+    "channel_number": 13,
+    "network_type": "standard",
+    "schedule_increment": 30,
+    "break_strategy": "standard",
+    "content_dir": "catalog/comedy_central",
+    "commercial_dir": "commercials",
+    "bump_dir": "bump",
+    "sign_off_video": "runtime/signoff.mp4",
+    "off_air_video": "runtime/off_air_pattern.mp4",
+    "standby_image": "runtime/standby.png",
+    "be_right_back_media": "runtime/brb.png",
+    "day_templates" : {
+        "weekday": {
+            "0": {"tags" : "tv"},
+            "1": {"tags" : "tv"},
+            "2": {"tags" : "tv"},
+            "3": {"tags" : "tv"},
+            "4": {"tags" : "tv"},
+            "5": {"tags" : "tv"},
+            "6": {"tags" : "tv"},
+            "7": {
+                "tags": ["sitcoms", "animation", "og"],
+                "random_tags": true,
+                "sequence": "Comedy-seq-1",
+                "sequence_start": 0.0,
+                "sequence_end": 1.0
+            },
+            "8": {
+                "tags": ["sitcoms", "animation", "og"],
+                "random_tags": true,
+                "sequence": "Comedy-seq-1",
+                "sequence_start": 0.0,
+                "sequence_end": 1.0
+            },
+            "9": {
+                "tags": ["sitcoms", "animation", "og"],
+                "random_tags": true,
+                "sequence": "Comedy-seq-1",
+                "sequence_start": 0.0,
+                "sequence_end": 1.0
+            },
+            "10": {
+                "tags": ["sitcoms", "animation", "og"],
+                "random_tags": true,
+                "sequence": "Comedy-seq-1",
+                "sequence_start": 0.0,
+                "sequence_end": 1.0
+            },
+            "11": {
+                "tags": ["sitcoms", "animation", "og"],
+                "random_tags": true,
+                "sequence": "Comedy-seq-1",
+                "sequence_start": 0.0,
+                "sequence_end": 1.0
+            },
+            "12": {"tags" : "movies"},
+            "13": {"tags" : "wildcard"},
+            "14": {"tags" : "wildcard"},
+            "15": {"tags" : "wildcard"},
+            "16": {"tags" : "wildcard"},
+            "17": {"tags" : "wildcard"},
+            "18": {
+                "tags" : ["sketch", "hbo", "misc_other", "og"],
+                "random_tags": true,
+                "sequence": "Comedy-seq-2",
+                "sequence_start": 0.0,
+                "sequence_end": 1.0
+            },
+            "19": {
+                "tags" : ["sketch", "hbo", "misc_other", "og"],
+                "random_tags": true,
+                "sequence": "Comedy-seq-2",
+                "sequence_start": 0.0,
+                "sequence_end": 1.0
+            },
+            "20": {
+                "tags" : ["sketch", "hbo", "misc_other", "og"],
+                "random_tags": true,
+                "sequence": "Comedy-seq-2",
+                "sequence_start": 0.0,
+                "sequence_end": 1.0
+            },
+            "21": {
+                "tags" : ["sketch", "hbo", "misc_other", "og"],
+                "random_tags": true,
+                "sequence": "Comedy-seq-2",
+                "sequence_start": 0.0,
+                "sequence_end": 1.0
+            },
+            "22": {
+                "tags" : ["sketch", "hbo", "misc_other", "og"],
+                "random_tags": true,
+                "sequence": "Comedy-seq-2",
+                "sequence_start": 0.0,
+                "sequence_end": 1.0
+            },
+            "23": {
+                "tags" : ["sketch", "hbo", "misc_other", "og"],
+                "random_tags": true,
+                "sequence": "Comedy-seq-2",
+                "sequence_start": 0.0,
+                "sequence_end": 1.0
+            }
+        }
+    },
+
+    "monday": "weekday",
+    "tuesday": "weekday",
+    "wednesday": "weekday",
+    "thursday": "weekday",
+    "friday": "weekday",
+    "saturday": "weekday",
+    "sunday": "weekday"
+  }
+}

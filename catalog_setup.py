@@ -1,4 +1,5 @@
 import os
+import shutil
 import csv
 import json
 import re
@@ -175,7 +176,6 @@ def recurse_adding_media(channel_path, src):
         elif os.path.isfile(f"{src}/{item}"):
             filetype = item.split('.')[1]
             if filetype in supported_formats:
-                print("in")
                 make_symlink_if_not_exists(f"{src}/{item}", f"{channel_path}/{item}")
 
 def add_misc_videos(channel_name, channel_path):
@@ -206,7 +206,7 @@ def process_channel(channel_name):
 def replace_conf(name):
     for conf in os.listdir('./confs'):
         if name in conf:
-            os.replace(f"./confs/{conf}", f"{fieldstore_confs_path}/{conf}")
+            shutil.copy(f"./confs/{conf}", f"{fieldstore_confs_path}/{conf}")
 
 
 parser = build_parser()

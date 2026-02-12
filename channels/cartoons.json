@@ -4,6 +4,10 @@
     ],
     "commercials": [
         "kids",
+        "channels/cartoon_network",
+        "channels/nick_at_night",
+        "channels/the_n",
+        "channels/toonami",
         "general"
     ],
     "tv": {
