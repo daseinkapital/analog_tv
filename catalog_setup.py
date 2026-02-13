@@ -174,7 +174,7 @@ def recurse_adding_media(channel_path, src):
         if os.path.isdir(f"{src}/{item}"):
             recurse_adding_media(channel_path, f"{src}/{item}")
         elif os.path.isfile(f"{src}/{item}"):
-            filetype = item.split('.')[1]
+            filetype = item.split('.')[-1]
             if filetype in supported_formats:
                 make_symlink_if_not_exists(f"{src}/{item}", f"{channel_path}/{item}")
 
@@ -232,30 +232,3 @@ else:
 
         if args.update_confs:
             replace_conf(channel_name)
-        
-        
-        
-        
-        
-        # if not os.path.exists(f"./FieldStation42/catalog/{channel_name}/{init_tag}"):
-        #     print(f"Making dir for at ./FieldStation42/catalog/{channel_name}/{init_tag}")
-        #     os.mkdir(f"./FieldStation42/catalog/{channel_name}/{init_tag}")
-        # if init_tag == "commercials":
-            
-        # if type(v) == list:
-        #     for item in v:
-        #         print("Copying directory", item)
-        # elif type(v) == dict:
-        #     for k1,v1 in v.items():
-        #         if os.path.exists(f'./FieldStation42/catalog/{channel_name}/{k}/{k1}'):
-        #             print("Skipping making path")
-        #         else:
-        #             print(f"Making dir for ./FieldStation42/catalog/{channel_name}/{k}/{k1}")
-        #             os.mkdir(f'./FieldStation42/catalog/{channel_name}/{k}/{k1}')
-        #         for media in v1:
-        #             if os.path.exists(f"./FieldStation42/catalog/{channel_name}/{k}/{k1}/{media}"):
-        #                 print(f"Skipping making folder for {media}")
-        #             else:
-        #                 print(f"Making dir for ./FieldStation42/catalog/{channel_name}/{k}/{k1}/{media}")
-        #                 os.mkdir(f"./FieldStation42/catalog/{channel_name}/{k}/{k1}/{media}")
-        #             symlink_files(media, channel_name, k, title=media, media_type=k1)
