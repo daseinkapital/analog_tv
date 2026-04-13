@@ -1,0 +1,57 @@
+{
+    "bump": [
+        "cartoon_network"
+    ],
+    "commercials": [
+        "kids",
+        "channels/nick_at_night",
+        "channels/the_n",
+        "general"
+    ],
+    "tv": {
+        "morning": [
+            "Ned's Declassified",
+            "The Secret World of Alex Mack",
+            "iCarly (2008)",
+            "Drake and Josh"
+        ],
+        "daytime": [
+            "Ned's Declassified",
+            "The Secret World of Alex Mack",
+            "iCarly (2008)",
+            "Drake and Josh"
+        ],
+        "prime": [
+            "Saved By The Bell",
+            "Degrassi High",
+            "Freaks and Geeks",
+            "My So Called Life",
+            "The OC",
+            "Smallville",
+            "Undeclared",
+            "Clarissa Explains It All",
+            "10 Things I Hate About You",
+            "The Secret Life of an American Teenager",
+            "Kenan and Kel"
+        ],
+        "late": [
+            "Skam",
+            "90210",
+            "Sabrina the Teenage Witch",
+            "Buffy the Vampire Slayer",
+            "Daria",
+            "Veronica Mars",
+            "The Inbetweeners"
+        ]
+    },
+    "movies": {
+        "general": [
+            "Clueless",
+            "Mean Girls",
+            "She's All That",
+            "10 Things I Hate About You",
+            "Bring It On",
+            "Easy A"
+        ]
+    }
+}

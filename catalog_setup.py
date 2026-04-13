@@ -100,6 +100,7 @@ def recurse_tagging(contents, curr_dir, first_level=False):
     for tag, val in contents.items():
         print("Tag", tag)
         print("Val", val)
+        print("Curr dir", curr_dir)
         next_dir = f"{curr_dir}/{tag}"
         make_dir_if_not_exists(next_dir)
         if first_level: # only run on the first level
@@ -112,7 +113,7 @@ def recurse_tagging(contents, curr_dir, first_level=False):
                 continue
         if type(val) == list: # if it's a list of things, locate them and make the symlink
             for media_name in val:
-                symlink_files(media_name, channel_name, next_dir, media_type="tv" if "/tv" in next_dir else "movie")
+                symlink_files(media_name, curr_dir.split('/')[-1], next_dir, media_type="tv" if "/tv" in next_dir else "movie")
         elif type(val) == dict: # if the next goes deeper, make the dir then recurse
             recurse_tagging(val, next_dir)
     return
