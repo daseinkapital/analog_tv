@@ -191,7 +191,7 @@ def process_seasonal():
     for key, month in holiday_shows.items():
         print("Processing ", key)
         # Parse key: "Show S{season}E{episode}"
-        parts = key.split(' S')
+        parts = key.rsplit(' S', 1)
         show_name = parts[0]
         se_part = parts[1]  # "1E2" for S1E2
         season_str, ep_str = se_part.split('E')
