@@ -247,6 +247,7 @@ def process_channel(channel_name):
 def replace_conf(name):
     for conf in os.listdir('./confs'):
         if name in conf:
+            print("Moving conf ", conf)
             shutil.copy(f"./confs/{conf}", f"{fieldstore_confs_path}/{conf}")
 
 
