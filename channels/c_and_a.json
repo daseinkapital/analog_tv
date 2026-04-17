@@ -1,0 +1,34 @@
+{
+    "bump": [
+        "generic",
+        "post",
+        "pre"
+    ],
+    "commercials": [
+        "general"
+    ],
+    "tv": [
+        "Beastmaster",
+        "Camelot",
+        "Carnivale",
+        "Firefly",
+        "Jonathan Strange",
+        "The Magicians",
+        "Cowboy Bebop"
+    ],
+    "movies": {
+        "general": [
+            "Harry Potter and the Chamber",
+            "Harry Potter and the Deathly Hallows Part 1",
+            "Harry Potter and the Deathly Hallows Part 2",
+            "Harry Potter and the Goblet",
+            "Harry Potter and the Half-Blood",
+            "Harry Potter and the Order",
+            "Harry Potter and the Philo",
+            "Harry Potter and the Prisoner",
+            "The Hitchhikers",
+            "The Masters of Time",
+            "The Secret of NIHM"
+        ]
+    }
+}

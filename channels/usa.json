@@ -1,6 +1,8 @@
 {
     "bump": [
-        "abc"
+        "generic",
+        "post",
+        "pre"
     ],
     "commercials": [
         "general",

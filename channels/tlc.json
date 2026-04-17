@@ -1,0 +1,26 @@
+{
+    "bump": [
+        "generic",
+        "post",
+        "pre"
+    ],
+    "commercials": [
+        "general"
+    ],
+    "tv": [
+        "Abstract- The Art of Design",
+        "Anthony Bourdain No Reservations",
+        "Anthony Bourdain - Parts Unknown"
+    ],
+    "movies": {
+        "general": [
+            "Carts of Darkness",
+            "Meeting People Is Easy",
+            "Mistaken for Strangers",
+            "Mr Blue Sky",
+            "No Cameras Allowed",
+            "Shut Up and Play the Hits",
+            "The Devil and Daniel"
+        ]
+    }
+}

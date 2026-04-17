@@ -1,0 +1,31 @@
+{
+    "bump": [
+        "generic",
+        "post",
+        "pre"
+    ],
+    "commercials": [
+        "general"
+    ],
+    "tv": [
+        "CSI - Crime Scene Investigation",
+        "CSI - Miami",
+        "CSI - NY",
+        "Dexter",
+        "Fringe",
+        "Grimm",
+        "Miami Vice",
+        "Monk",
+        "Pushing Daisies",
+        "Psych",
+        "Veronica Mars"
+    ],
+    "movies": {
+        "general": [
+            "Mystery Team",
+            "Brick",
+            "Hot Fuzz",
+            "Knives Out"
+        ]
+    }
+}

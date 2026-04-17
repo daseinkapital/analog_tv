@@ -1,0 +1,23 @@
+{
+    "bump": [
+        "cartoon_network"
+    ],
+    "commercials": [
+        "general",
+        "kids"
+    ],
+    "tv": [
+        "Scooby-Doo, Where Are You!",
+        "The New Scooby-Doo Movies"
+    ],
+    "movies": [
+        "Scooby-Doo",
+        "Scooby-Doo 2 - Monsters Unleashed",
+        "Scooby-Doo and the Alien Invaders",
+        "Scooby-Doo and the Cyber Chase",
+        "Scooby-Doo! and the Legend of the Vampire",
+        "Scooby-Doo! and the Loch Ness Monster",
+        "Scooby-Doo! and the Witch's Ghost",
+        "Scooby-Doo! in Where's My Mummy"
+    ]
+}

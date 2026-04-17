@@ -1,0 +1,72 @@
+{
+    "bump": [
+        "generic",
+        "post",
+        "pre"
+    ],
+    "commercials": [
+        "general"
+    ],
+    "tv": {
+        "June 1 - August 31": [
+            "Gravity Falls",
+            "Miami Vice",
+            "The OC"
+        ],
+        "September 1 - November 30": [
+            "Gilmore Girls",
+            "Twin Peaks"
+        ],
+        "October": [
+            "Over the Garden Wall",
+            "Scooby-Doo, Where Are You!"
+        ],
+        "December 1 - February 28": [
+            "Normal People"
+        ]
+        
+    },
+    "movies": {
+        "February": [
+            "Valentine's Day"
+        ],
+        "June 1 - August 31": [
+            "Aftersun",
+            "Dirty Dancing",
+            "American Pie",
+            "La La Land",
+            "Mamma Mia",
+            "Palm Springs",
+            "The Kings of Summer"
+        ],
+        "September 1 - November 30": [
+            "Good Will Hunting"
+        ],
+        "Q1": [
+            "When Harry Met Sally..."
+        ],
+        "October": [
+            "Scooby-Doo! and the Legend of the Vampire",
+            "Scooby-Doo! and the Witch's Ghost",
+            "Scooby-Doo! in Where's My Mummy",
+            "Jennifer's Body",
+            "The Thing",
+            "Shaun of the Dead",
+        ],
+        "November": [
+            "Pieces of April",
+            "Sweethearts"
+        ],
+        "December": [
+            "A Merry Little Ex-Mas",
+            "A Newport Christmas",
+            "Christmas Above the Clouds",
+            "Christmas At The Catnip Cafe",
+            "Harry Potter and the Philsopher's",
+            "Harry Potter and the Chamber",
+            "Strike of Love",
+            "The Great Christmas Snow-In",
+            "The Search for Secret Santa"
+        ]
+    }
+}

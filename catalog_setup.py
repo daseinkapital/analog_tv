@@ -98,9 +98,6 @@ def parse_episode(episode_name):
 
 def recurse_tagging(contents, curr_dir, first_level=False):
     for tag, val in contents.items():
-        print("Tag", tag)
-        print("Val", val)
-        print("Curr dir", curr_dir)
         next_dir = f"{curr_dir}/{tag}"
         make_dir_if_not_exists(next_dir)
         if first_level: # only run on the first level
@@ -121,7 +118,6 @@ def recurse_tagging(contents, curr_dir, first_level=False):
 def symlink_files(media_name, channel_name, curr_dir, media_type="tv"):
     found = False
     if media_type == "tv":
-        print("Current dir", curr_dir)
         for show in os.listdir(mnt_dir_tv): # loop through all our tv
             if show.capitalize().startswith(media_name.capitalize()): # see if we find the folder
                 found = True # mark folder as found
@@ -188,6 +184,50 @@ def add_misc_videos(channel_name, channel_path):
     make_dir_if_not_exists(f"{channel_path}/{channel_name}")
     recurse_adding_media(f"{channel_path}/{channel_name}", other_paths[channel_name])
 
+def process_seasonal():
+    channel_path = f"{fieldstore_catalog_path}/seasonal"
+    holiday_shows = grab_holiday_specials()
+    for key, month in holiday_shows.items():
+        # Parse key: "Show S{season}E{episode}"
+        parts = key.split(' S')
+        show_name = parts[0]
+        se_part = parts[1]  # "1E2" for S1E2
+        season_str, ep_str = se_part.split('E')
+        season = int(season_str)
+        ep = int(ep_str)
+        
+        # Find show folder
+        show_folder = None
+        for folder in os.listdir(mnt_dir_tv):
+            if folder.lower().startswith(show_name.lower()):
+                show_folder = folder
+                break
+        if not show_folder:
+            print(f"Could not find folder for show {show_name}")
+            continue
+        
+        # Look for the episode
+        found = False
+        for s in os.listdir(f"{mnt_dir_tv}/{show_folder}"):
+            season_path = f"{mnt_dir_tv}/{show_folder}/{s}"
+            if os.path.isdir(season_path):
+                for e in os.listdir(season_path):
+                    if os.path.isfile(f"{season_path}/{e}"):
+                        if e.endswith(".srt") or e == '.DS_Store':
+                            continue
+                        file_season, file_ep = parse_episode(e)
+                        if file_season == season and file_ep == ep:
+                            # Found the episode
+                            make_dir_if_not_exists(f"{channel_path}/{month}")
+                            make_dir_if_not_exists(f"{channel_path}/{month}/{show_name}")
+                            make_symlink_if_not_exists(f"{season_path}/{e}", f"{channel_path}/{month}/{show_name}/{e}")
+                            found = True
+                            break
+                if found:
+                    break
+        if not found:
+            print(f"Could not find episode S{season}E{ep} for {show_name}")
+
 
 def process_channel(channel_name):
     channel_path = f"{fieldstore_catalog_path}/{channel_name}"
@@ -199,6 +239,8 @@ def process_channel(channel_name):
     elif channel_name in ["mtv", "slow_tv", "jazzercise", "home"]:
         add_misc_videos(channel_name, channel_path)
         return
+    elif channel_name == "seasonal":
+        process_seasonal()
     with open(f"channels/{channel_name}.json") as f:
         contents = json.load(f)
         print(channel)

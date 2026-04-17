@@ -10,6 +10,7 @@
         "sitcoms": [
             "30 Rock",
             "A.P. Bio",
+            "ALF",
             "Brooklyn Nine-Nine",
             "Community",
             "How I Met Your Mother",
@@ -21,8 +22,7 @@
             "BoJack Horseman",
             "Close Enough",
             "Futurama",
-            "King of the Hill",
-            "South Park"
+            "King of the Hill"
         ],
         "sketch": [
             "Chapelle Show",
@@ -39,7 +39,6 @@
             "Jon Glaser",
             "Nathan For You",
             "Review",
-            "South Park",
             "Workaholics"
         ],
         "hbo": [
@@ -51,6 +50,7 @@
             "Vice Principals"
         ],
         "misc_other": [
+            "Arrested Development",
             "DAVE",
             "King of the Hill",
             "Man Seeking Woman",
@@ -63,15 +63,19 @@
             "The League",
             "The Whitest Kids U Know",
             "Undeclared",
-            "Wilfred"
+            "Wilfred",
+            "Baskets",
+            "Jury Duty"
         ],
         "wildcard": [
+            "Arrested Development",
             "Chapelle Show",
             "Close Enough",
             "Curb",
             "DAVE",
             "Detroiters",
             "Eastbound and Down",
+            "English Teacher",
             "Futurama",
             "How To with John Wilson",
             "I Think You Should Leave",

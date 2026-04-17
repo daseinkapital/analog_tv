@@ -31,17 +31,24 @@
             "Invader Zim",
             "Justice League",
             "Justice League Unlimited",
-            "Young Justice"
+            "Young Justice",
+            "Archer",
+            "Teen Titans"
         ],
         "night": [
             "Cowboy Bebop",
+            "Martin Mystery",
+            "Mike Tyson",
             "Rick and Morty",
             "Samurai Champloo",
             "Space Ghost Coast to Coast"
         ],
         "October": [
             "Over the Garden Wall"
-        ]
+        ],
+        "bobs_burgers": ["Bob's Burgers"],
+        "the_simpsons": ["The Simpsons"],
+        "south_park": ["South Park"]
     },
     "movies": {
         "general": [
