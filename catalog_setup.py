@@ -76,7 +76,8 @@ def make_dir_if_not_exists(directory):
 
 def make_symlink_if_not_exists(src, trg):
     if not os.path.islink(trg):
-        os.symlink(src, trg)
+        if not os.path.exists(trg):
+            os.symlink(src, trg)
 
 holiday_tv_shows = grab_holiday_specials()
 
