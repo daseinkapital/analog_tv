@@ -241,7 +241,7 @@ def process_channel(channel_name):
     elif channel_name in ["mtv", "slow_tv", "jazzercise", "home"]:
         add_misc_videos(channel_name, channel_path)
         return
-    elif channel_name == "seasonal":
+    if channel_name == "seasonal":
         process_seasonal()
     with open(f"channels/{channel_name}.json") as f:
         contents = json.load(f)
