@@ -77,6 +77,7 @@ def make_dir_if_not_exists(directory):
 def make_symlink_if_not_exists(src, trg):
     if not os.path.islink(trg):
         if not os.path.exists(trg):
+            print(f"Creating symlink to {trg}")
             os.symlink(src, trg)
 
 holiday_tv_shows = grab_holiday_specials()
@@ -123,7 +124,6 @@ def symlink_files(media_name, channel_name, curr_dir, media_type="tv"):
         for show in os.listdir(mnt_dir_tv): # loop through all our tv
             if show.capitalize().startswith(media_name.capitalize()): # see if we find the folder
                 found = True # mark folder as found
-                print("Linking ", show)
                 make_dir_if_not_exists(f"{curr_dir}/{media_name}")
                 for s in os.listdir(f"{mnt_dir_tv}/{show}"): # open the folder
                     if os.path.isdir(f"{mnt_dir_tv}/{show}/{s}"): # ensure object is folder
@@ -136,7 +136,6 @@ def symlink_files(media_name, channel_name, curr_dir, media_type="tv"):
                                     holiday_name = f"{media_name} S{season}E{ep}" # create a naming convention
                                     # print("Holiday Name", holiday_name)
                                     if holiday_name in holiday_tv_shows: # check if holiday episode
-                                        print("Found holiday episode", holiday_name) # tell user we got a holiday episode
                                         make_dir_if_not_exists(f"{curr_dir}/{holiday_tv_shows[holiday_name]}")
                                         make_dir_if_not_exists(f"{curr_dir}/{holiday_tv_shows[holiday_name]}/{media_name}")
                                         make_symlink_if_not_exists(f"{mnt_dir_tv}/{show}/{s}/{e}", f"{curr_dir}/{holiday_tv_shows[holiday_name]}/{media_name}/{e}")
@@ -146,11 +145,9 @@ def symlink_files(media_name, channel_name, curr_dir, media_type="tv"):
                                 pass
                 break
     elif media_type == 'movie':
-        print("Current dir", curr_dir)
         for movie in os.listdir(mnt_dir_movies): # loop through all our movies
             if movie.capitalize().startswith(media_name.capitalize()): # see if we find the folder
                 found = True # mark folder as found
-                print("Linking ", movie)
                 make_dir_if_not_exists(f"{curr_dir}/{media_name}")
                 for s in os.listdir(f"{mnt_dir_movies}/{movie}"): # open the folder
                     for filetype in supported_formats:
@@ -169,7 +166,6 @@ def check_items_in_path_folder_or_file(path):
 
 def recurse_adding_media(channel_path, src):
     for item in os.listdir(src):
-        print(item)
         if os.path.isdir(f"{src}/{item}"):
             recurse_adding_media(channel_path, f"{src}/{item}")
         elif os.path.isfile(f"{src}/{item}"):
