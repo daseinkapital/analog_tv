@@ -189,7 +189,6 @@ def process_seasonal():
     channel_path = f"{fieldstore_catalog_path}/seasonal"
     holiday_shows = grab_holiday_specials()
     for key, month in holiday_shows.items():
-        print("Processing ", key)
         # Parse key: "Show S{season}E{episode}"
         parts = key.rsplit(' S', 1)
         show_name = parts[0]
