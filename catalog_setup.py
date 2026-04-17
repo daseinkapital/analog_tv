@@ -48,6 +48,7 @@ def build_parser():
     parser.add_argument(
         "-u",
         "--update-confs",
+        action="store_false",
         help="Replace current conf",
     )
 
