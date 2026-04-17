@@ -48,7 +48,6 @@ def build_parser():
     parser.add_argument(
         "-u",
         "--update-confs",
-        action="store_false",
         help="Replace current conf",
     )
 
@@ -246,9 +245,7 @@ def process_channel(channel_name):
 
 def replace_conf(name):
     for conf in os.listdir('./confs'):
-        print("Name", name, "Conf", conf)
         if name in conf:
-            print("Moving conf ", conf)
             shutil.copy(f"./confs/{conf}", f"{fieldstore_confs_path}/{conf}")
 
 
